@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.laywer.dao.LawyerMapper">
+    <select id="searchLawer" parameterType="com.example.laywer.pojo.SearchCondition" resultType="com.example.laywer.pojo.Lawer">
+        select * from lawer inner join lawer_comment lc on lawer.id = lc.lawer_id
+        <where>
+            <if test="province!=null and province!=''">
+                and province=#{province}
+            </if>
+            <if test="city!=null and city!=''">
+                and city=#{city}
+            </if>
+            <if test="region!=null and region!=''">
+                and region=#{region}
+            </if>
+            <if test="expert_area!=null and expert_area!=''">
+                and expert_area=#{expert_area}
+            </if>
+        </where>
+        order by lc.score desc limit #{offset},10
+    </select>
+</mapper>
