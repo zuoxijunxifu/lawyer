@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
-@Repository
 @Mapper
 public interface LawyerMapper {
     //根据区域和案件类型查询律师 按照综合排序来排列

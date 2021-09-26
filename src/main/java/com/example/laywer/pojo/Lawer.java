@@ -11,7 +11,7 @@ import lombok.Data;
  */
 @Data
 public class Lawer {
-    private String id; //律师id
+    private Integer id; //律师id
     private String name; //律师姓名
     private String office; //事务所
     private String province; //省份
@@ -21,4 +21,5 @@ public class Lawer {
     private String score;   //综合评分
     private String expert_area;  //擅长领域
     private String profession_score;  //专业评分
+    private Integer label;  //是否是合法的
 }
